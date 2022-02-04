@@ -6,9 +6,9 @@ import Navbar from './components/Navbar'
 class App extends Component {
   state = {
     products: [
-      { name : 'arbejas', price: 5, img: '/products/arbejas.jpg' },
-      { name : 'lechuga', price: 10, img: '/products/lechuga.jpg' },
-      { name : 'tomate', price: 15, img: '/products/tomate.jpg' }
+      { name : 'Cerveza Gallo - Six pack', price: 5, img: '/products/gallo.jpg' },
+      { name : 'Cerveza El Zapote - Six pack', price: 10, img: '/products/zapote.jpg' },
+      { name : 'Cerveza Corona - Six pack', price: 15, img: '/products/corona.jpg' }
     ],
     cart: []
   }
