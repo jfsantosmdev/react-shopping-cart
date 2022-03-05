@@ -7,10 +7,11 @@ class App extends Component {
   state = {
     products: [
       { name : 'Cerveza Gallo - Six pack', price: 5, img: '/products/gallo.jpg' },
-      { name : 'Cerveza El Zapote - Six pack', price: 10, img: '/products/zapote.jpg' },
+      { name : 'Cerveza El Zapote - Six pack', price: 10, img: '/products/zapote.png' },
       { name : 'Cerveza Corona - Six pack', price: 15, img: '/products/corona.jpg' }
     ],
-    cart: []
+    cart: [],
+    isCartVisible: false
   }
 
   addToCart = (product) => {
@@ -33,10 +34,24 @@ class App extends Component {
       })
     })
   }
+
+  showCart = () => {
+    if(!this.state.cart.length){
+      return
+    }
+    
+    this.setState({ isCartVisible: !this.state.isCartVisible })
+  }
+
   render() {
+    const { isCartVisible } = this.state
     return (
       <div>
-        <Navbar cart={this.state.cart} />
+        <Navbar 
+          cart={this.state.cart} 
+          isCartVisible={isCartVisible} 
+          showCart={this.showCart} 
+        />
         <Layout>
           <Title />
           <Products 
